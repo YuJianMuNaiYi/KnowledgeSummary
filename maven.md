@@ -1,7 +1,7 @@
 # maven 
 ## 1.Maven两大核心
   - ### 依赖管理:就是对jar包进行管理
-![](https://github.com/YuJianMuNaiYi/YuJianMuNaiYi.github.io/images/Maven/maven1.png)
+![](https://github.com/YuJianMuNaiYi/YuJianMuNaiYi.github.io/blob/master/images/Maven/maven1.png)
   - ### 项目构建:项目在编码完成后,对项目进行编译,测试,打包,部署等一系列的操作都通过命令来实现
   ## 2. 通过Maven命令将web项目发布至tomcat
   ![](https://github.com/YuJianMuNaiYi/YuJianMuNaiYi.github.io/images/Maven/maven2.png)
