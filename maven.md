@@ -1,24 +1,24 @@
 # maven 
 ## 1.Maven两大核心
   - ### 依赖管理:就是对jar包进行管理
-![](Images/Maven/maven1.png)
+![](https://github.com/YuJianMuNaiYi/YuJianMuNaiYi.github.io/blob/master/images/Maven/maven1.png)
   - ### 项目构建:项目在编码完成后,对项目进行编译,测试,打包,部署等一系列的操作都通过命令来实现
   ## 2. 通过Maven命令将web项目发布至tomcat
-  ![](Images/Maven/maven2.png)
+  ![](https://github.com/YuJianMuNaiYi/YuJianMuNaiYi.github.io/blob/master/images/Maven/maven2.png)
   ## 3. Maven目录结构说明
-  ![](Images/Maven/maven3.png)
+  ![](https://github.com/YuJianMuNaiYi/YuJianMuNaiYi.github.io/blob/master/images/Maven/maven3.png)
   ## 4. Maven环境变量配置
   ## 5. 查看Maven版本信息
-  ![](Images/Maven/maven4.png)
+  ![](https://github.com/YuJianMuNaiYi/YuJianMuNaiYi.github.io/blob/master/images/Maven/maven4.png)
   ## 6. Maven仓库类型
-  ![](Images/Maven/maven5.png)
+  ![](https://github.com/YuJianMuNaiYi/YuJianMuNaiYi.github.io/blob/master/images/Maven/maven5.png)
   - ### 配置本地仓库
     - ### 找到jar仓库压缩包
     - ### 解压到本地磁盘
     - ### 配置本地仓库:让maven程序知道仓库在哪里
-      ![](Images/Maven/maven6.png)
+      ![](https://github.com/YuJianMuNaiYi/YuJianMuNaiYi.github.io/blob/master/images/Maven/maven6.png)
   ## 7. Maven项目标准目录结构
-  ![](Images/Maven/maven7.png)
+  ![](https://github.com/YuJianMuNaiYi/YuJianMuNaiYi.github.io/blob/master/images/Maven/maven7.png)
   ## 8. Maven常用命令
   - ### clear 清理:将项目跟目录下的target目录清理掉
   - ### compile 编译:将项目中的.java文件编译为.class文件

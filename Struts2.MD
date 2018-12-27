@@ -30,9 +30,9 @@
     - #### 页面展示用的主题
        - #### struts.ui.theme=xhtml
 - #### struts-default.xml(核心配置文件)
-    ![](Images/Struts2/struts_default1.png)
+    ![](https://github.com/YuJianMuNaiYi/YuJianMuNaiYi.github.io/blob/master/images/Struts2/struts_default1.png)
   - #### 拦截器
-    ![](Images/Struts2/interceptors.png)
+    ![](https://github.com/YuJianMuNaiYi/YuJianMuNaiYi.github.io/blob/master/images/Struts2/interceptors.png)
 #### Struts.xml配置文件说明
   ``` xml
   <?xml version="1.0" encoding="UTF-8"?>
@@ -172,7 +172,7 @@
 </struts>
   ```
   - #### 关于Struts.xml中result标签的type取值说明
-    ![](Images/Struts2/result-type.png)
+    ![](https://github.com/YuJianMuNaiYi/YuJianMuNaiYi.github.io/blob/master/images/Struts2/result-type.png)
   - #### 关于转发与重定向
     - #### 转发 
       - #### 一次请求
