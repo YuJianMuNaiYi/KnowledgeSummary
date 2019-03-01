@@ -1,6 +1,8 @@
 # Vue 
 ## 1.概念
+
 # Vuex
+  ![](/images/Vue/Vuex.png)
 - #### 核心概念
   - #### State
     - #### state就是Vuex中的公共的状态
