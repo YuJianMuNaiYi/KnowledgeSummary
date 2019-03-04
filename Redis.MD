@@ -78,9 +78,37 @@
 - ####  字符串类型
     ![](Images/Redis/Redis07.png)  
 - #### 哈希类型
-- #### 列表类型
-- #### 集合类型
-- #### 有序集合类型
+  - #### hget key field 获取hash key对应的field的value
+  - #### hset key field 设置hash key对应的field的value
+  - #### hdel key field 删除hash key对应的field的value
+  - #### hexists key field 判断hash key是否有field
+  - #### hlen key 获取hash key field的数量
+  - #### hgetall key 获取hash key对应所有的field和value
+  - #### hvals key 获取hash key对应所有field的value
+  - #### hkeys key 获取hash key对应所有的field
+- #### 列表类型(有序，重复，左右两边插入弹出)
+    ![](Images/Redis/Redis08.png)  
+- #### 集合类型(无序，无重复，支持集合间操作)
+  - #### sadd key element 向集合key添加element(如果element已经存在，添加失败)
+  - #### srem key element 将集合key中的element移除掉
+  - #### scard 计算集合大小
+  - #### sismember 判断某个元素是否存在于集合中
+  - #### srandmember 从集合中随机取出一个元素，不会破坏集合
+  - #### smembers 获取集合中的所有元素
+  - #### spop 从集合中弹出一个元素
+  - #### sdiff 差集
+  - #### sinter 交集
+  - #### sunion 并集
+    ![](Images/Redis/Redis09.png)  
+    ![](Images/Redis/Redis10.png)    
+- #### 有序集合类型(无重复元素，有序，element+score)
+  - #### zadd key score element (可以是多对，添加score和element)
+  - #### zrem key element (可以是多个) 删除元素
+  - #### score key element 返回元素的分数
+  - #### zincrby key inscrScore element 增加或减少元素的分数
+  - #### zcard key 返回元素的总个数
+  - #### zrank 获取元素排名
+  - #### zrange key start end [withscores] 返回指定索引范围内的升序元素[分值]
 ### 4.Redis客户端的使用
 ### 5.瑞士军刀Redis
 ### 6.Redis持久化的取舍和选择
