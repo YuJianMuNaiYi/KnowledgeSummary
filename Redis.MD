@@ -109,9 +109,124 @@
   - #### zcard key 返回元素的总个数
   - #### zrank 获取元素排名
   - #### zrange key start end [withscores] 返回指定索引范围内的升序元素[分值]
+    ![](Images/Redis/Redis11.png)    
 ### 4.Redis客户端的使用
 ### 5.瑞士军刀Redis
+  - #### 慢查询
+    - #### 生命周期
+    ![](Images/Redis/Redis12.png)    
+    - #### 两个配置
+      - #### slowlog-max-len
+        - #### 先进先出队列
+        - #### 固定长度
+        - #### 保存在内存内
+      - #### slowlog-log-slower-than
+        - #### 慢查询阈值(单位：微秒)
+        - #### slowlog-log-slower-than=0 记录所有命令
+        - #### slowlog-log-slower-than<0 不记录任何命令
+      - #### 默认值
+        - #### config get slowlog-man-len=128
+        - #### config get slowlog-log-slower-than=10000
+      ![](Images/Redis/Redis13.png)    
+      - #### 修改配置文件重启
+      - #### 动态配置
+    - #### 三个命令
+      - #### slowlog get [n] 获取慢查询队列
+      - #### slowlog len 获取慢查询队列长度
+      - #### slowlog reset 清空慢查询队列
+    - #### 运维经验
+      - #### slowlog-man-len不要设置过大，默认10ms，通常设置1ms
+      - #### slowlog-log-slower-than 不要设置过小，通常设置1000左右
+      - #### 理解命令生命周期
+      - #### 定期持久化慢查询
+  - #### pipline
+      ![](Images/Redis/Redis14.png)    
+  - #### 发布订阅
+    - #### 角色
+      - #### 发布者(publisher)
+      - #### 订阅者(subscriber)
+      - #### 频道(channel)
+    - #### 模型
+      ![](Images/Redis/Redis15.png)    
+      ![](Images/Redis/Redis16.png)    
+    - #### API
+      - #### publish
+        - #### publish channel message
+      - #### subscribe
+        - #### subscribe [channel] 订阅一个或多个频道
+      - #### unsubscribe
+        - #### unsubscribe [channel] 订阅一个或多个频道
+      - #### 其他API
+      ![](Images/Redis/Redis17.png)            
+    - #### 发布订阅与消息队列
+  - #### Bitmap
+    - #### setbit key offset value 给位图指定索引设置值
+    - #### getbit key offset 获取位图指定索引的值
+  - #### HyperLogLog
+  - #### GEO
 ### 6.Redis持久化的取舍和选择
+  - #### 持久化的作用(Redis所有数据保存在内存中，对数据的更新将异步地保存在磁盘上)
+    - #### 持久化方式
+      - #### 快照
+        - #### MySql Dump
+        - #### Redis RDB
+      - #### 写日志
+        - #### MySql Binlog
+        - #### Hbase HLog
+        - #### Redis AOF
+  - #### RDB
+      ![](Images/Redis/Redis18.png)            
+    - #### 触发机制 主要三种方式
+      - #### save(同步)
+      ![](Images/Redis/Redis19.png)            
+      ![](Images/Redis/Redis20.png)       
+      ![](Images/Redis/Redis21.png)       
+      - #### bgsave(异步)
+      ![](Images/Redis/Redis22.png)       
+      - #### 自动
+      ![](Images/Redis/Redis23.png)       
+    - #### 触发机制 不容忽略方式
+      - #### 全量复制
+      - #### debug reload
+      - #### shutdown
+    - #### RDB总结
+      - #### RDB是Redis内存到硬盘的快照，用于持久化
+      - #### save通常会阻塞Redis
+      - #### bgsave不会阻塞Redis,但是会fork新进程
+      - #### save自动配置满足任一就会被执行
+      - #### 有些触发机制不容忽视
+  - #### AOF
+      ![](Images/Redis/Redis25.png)       
+    - #### RDB现存问题
+      ![](Images/Redis/Redis24.png)       
+      - #### 耗时耗性能
+      - #### 不可控、丢失数据
+    - #### AOF三种策略
+      - #### always
+      ![](Images/Redis/Redis26.png)       
+      - #### everysec(默认值)
+      ![](Images/Redis/Redis27.png)       
+      - #### no
+      ![](Images/Redis/Redis28.png)     
+      ![](Images/Redis/Redis29.png)       
+      - #### AOF重写
+        - #### 减少磁盘占用量
+        - #### 加快恢复速度
+      - #### AOF重写实现两种方式
+        - #### bigwriteaof
+      ![](Images/Redis/Redis30.png)       
+      ![](Images/Redis/Redis31.png)       
+      ![](Images/Redis/Redis32.png)       
+      ![](Images/Redis/Redis33.png)       
+  - #### RDB和AOF的抉择
+    - #### RDB和AOF比较
+      ![](Images/Redis/Redis34.png)       
+    - #### RDB最佳策略
+      ![](Images/Redis/Redis35.png)       
+    - #### AOF最佳策略
+      ![](Images/Redis/Redis36.png)       
+    - #### 最佳策略
+      ![](Images/Redis/Redis37.png)       
 ### 7.Redis复制的原理和优化
 ### 8.Redis Sentinel(高可用)
 ### 9.Redis Cluster(分布式)
