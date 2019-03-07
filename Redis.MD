@@ -285,10 +285,42 @@
       - #### 单主节点复制风暴
         - #### 问题:主节点重启，多从节点复制
           - #### 解决:更换复制拓扑
-            ![](Images/Redis/Redis47.png)           
+            ![](Images/Redis/Redis47.png)     
       - #### 单机器复制风暴
         - #### 机器宕机后，大量全量复制
-            ![](Images/Redis/Redis48.png)         
+            ![](Images/Redis/Redis48.png) 
         - #### 主节点分散多机器  
 ### 8.Redis Sentinel(高可用)
+  - #### 主从复制高可用
+    - #### 主从复制存在的问题
+      - #### 手动故障转移
+      - #### 写能力和存储能力受限
+  - #### 架构说明
+    ![](Images/Redis/Redis49.png)         
+    ![](Images/Redis/Redis50.png)  
+    ![](Images/Redis/Redis51.png)         
+  - #### 安装配置
+    ![](Images/Redis/Redis52.png)         
+    ![](Images/Redis/Redis53.png)    
+    ![](Images/Redis/Redis54.png)    
+    ![](Images/Redis/Redis55.png)         
+    - #### 配置开启主从节点
+    - #### 配置开启sentinel监控主节点(sentinel是特殊的redis)
+    - #### 实际应该多机器
+    - #### 详细配置节点
+  - #### 客户端连接
+    ![](Images/Redis/Redis56.png)         
+    ![](Images/Redis/Redis57.png)         
+    ![](Images/Redis/Redis58.png)     
+    ![](Images/Redis/Redis59.png)         
+    - #### 请求响应流程
+    - #### jedis
+    - #### redis-py
+  - #### 实现原理
+    ![](Images/Redis/Redis49.png)    
+  - #### 客户端接入流程
+    - #### Sentinel地址集合
+    - #### masterName
+    - #### 不是代理模式
+  - #### 常见开发运维问题
 ### 9.Redis Cluster(分布式)
