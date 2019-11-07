@@ -9,3 +9,5 @@
 ![](/images/TypeScript/20191105120916.png)
 ## 3.基本类型
 ![](/images/TypeScript/BaseType.png)
+## 4.接口与类
+![](/images/TypeScript/InterfaceClass.png)
