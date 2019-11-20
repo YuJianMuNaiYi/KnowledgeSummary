@@ -47,3 +47,9 @@
       - #### 安装Jquery声明文件
         - #### npm i @types/jquery -d 
         - #### -d 表示开发者模式
+## 15.ts.config
+  - ## ts.config配置
+  - ## ts.config编译选项
+  - #### *.ts
+  - #### *d..ts
+  - #### *.tsx
